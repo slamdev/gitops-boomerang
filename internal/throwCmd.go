@@ -41,7 +41,7 @@ func init() {
 		logrus.WithError(err).Fatal("failed mark flag as required")
 	}
 	throwCmd.PersistentFlags().StringP("namespace", "n", "default", "namespace where to search")
-	throwCmd.PersistentFlags().DurationP("timeout", "t", 90*time.Second, "timeout for image update polling")
+	throwCmd.PersistentFlags().DurationP("timeout", "t", 5*time.Minute, "timeout for image update polling")
 	cobra.OnInitialize(func() {
 		fillWithEnvVars(throwCmd.Flags())
 	})
